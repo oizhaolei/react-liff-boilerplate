@@ -61,3 +61,13 @@ liffHelper.closeWindow();                          // close LIFF window
 
 ## Author
 Sitthi Thiammekha
+
+### Deploy the app using 'Deploy to Heroku' button
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/oizhaolei/react-liff-boilerplate)
+
+1. Click **Deploy to Heroku** above.
+2. On the "Create New App" page in Heroku, fill in the required information.
+3. Click **Deploy app**.
+4. Click **View** to confirm that your app is successfully deployed. You should see a page with the text "You have not assigned any value for LIFF ID". 
+5. Take a note of your app's URL (`https://{Heroku app name}.herokuapp.com`). You'll need it when you add the app to LIFF.

@@ -8,6 +8,9 @@ class liffHelper {
     return new Promise((resolve, reject) => {
       if (!isInit) {
         liff.init(
+          {
+            liffId: process.env.MY_LIFF_ID,
+          },
           data => {
             liffInfo = data;
             isInit = true;
