@@ -1,7 +1,6 @@
 const liff = window.liff;
 let isInit = false;
 let profile = {};
-let liffInfo = {};
 
 class liffHelper {
   init() {
@@ -10,17 +9,15 @@ class liffHelper {
         liff.init(
           {
             liffId: process.env.MY_LIFF_ID,
-          },
-          data => {
-            liffInfo = data;
+          })
+          .then(() => {
             isInit = true;
             resolve();
-          },
-          err => {
-            console.log('Fail to init LIFF, please run inside LINE only');
+          })
+          .catch((err) => {
+            alert(err);
             reject();
-          }
-        );
+          });
       } else {
         resolve();
       }
@@ -28,7 +25,7 @@ class liffHelper {
   }
 
   getLIFFInfo() {
-    return liffInfo;
+    return liff;
   }
 
   getProfile() {
@@ -42,7 +39,7 @@ class liffHelper {
                 resolve(profile);
               })
               .catch((err) => {
-                console.log('get profile error', err);
+                alert('get profile error', err);
                 reject(err);
               });
           } else {
